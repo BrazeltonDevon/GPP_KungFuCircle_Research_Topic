@@ -1,1 +1,2 @@
-# GPP_KungFuCircle_Research_Topic
+# Kung Fu Circle - AI Research Topic Devon Brazelton 2022 - 2023
+
