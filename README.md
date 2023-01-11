@@ -28,6 +28,7 @@ This grid can store a limited amount of enemies at a time and implements corouti
 Only enemies registered to the Kung-Fu circle (ApproachCircle.cs) will be included in who is available to attack.
 
 I am approaching my research topic using the Inner-Outer circle technique ontop of the Belgian AI system. 
+
 ![image](https://user-images.githubusercontent.com/96618671/211686098-5be4f783-9e90-48c8-bb92-e2aa2ff1523b.png)
 
 This means that there is a "melee range" and an "approach circle". Creatures assigned to be given permission to attack must stand at a slight distance away from the player. If they are given permission, they may approach within melee range of the player and attack them. Afterwards, they will be returned to the approach circle position.
