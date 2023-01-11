@@ -39,7 +39,7 @@ Every slot (represented by the red circles) is a place that a creature can be as
 With debug drawing on, you can also tell if that spot is occupied by an enemy (blue == occupied , green == not occupied).
 The maximum grid capacity is detached from the amount of slots, however both an available slot and available capacity is needed
 for an enemy to be registered to the Kung-Fu Circle and allowed permission to attack. To avoid issues, by default I set the maximum amount of slots to be equal
-to the maximum grid capacity. Otherwise, if the amount of slots were to be less than the maximum capacity there could be issues where there IS enough capacity but no available slots.
+to the maximum grid capacity. Otherwise, if the amount of slots were to be less than the maximum capacity there could be issues where there IS enough capacity but no available slots. By default, all enemies in my implementation have a weight of 1 but that can be easily changed by selecting an enemy in the scene and changing the value (this affects if they will be able to enter the Kung-Fu circle as stated on line 17).
 
 The player's Kung-Fu circle can be customized in the inspector to change the amount of slots, the distance the slots will be from the player's position...
 The degrees in which the slots will then spread out from the player (360 degrees making them spread into a full circle, etc...). 
@@ -68,10 +68,14 @@ https://user-images.githubusercontent.com/96618671/211688304-228b2dfd-8602-408f-
 Future expansions on this system can include:
 
 -Enemy on Enemy violence, enemies having grids and being able to form Kung-Fu circles around eachother.
+
 -Attacks with different weights, looping through all enemies sequencially and selecting available attacks based on attack weight instead
+
 of random selection with attack placeholder.
 -Turn-based combat where player attacks are done by selecting an enemy in the Kung-Fu circle.
+
 -Bigger scale AI simulation, adding hundreds of enemies swarming on targets (thinking GPP framework flocking except pirahnas that are polite to bite one at a time).
+
 
 Resources:
 GameAIPro - Chapter28: Beyond the Kung-Fu Circle
