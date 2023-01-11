@@ -49,10 +49,11 @@ The player can also attack enemies. Pressing the left-mouse button will send a s
 On the topic of the enemy manager, the enemy manager is an overbranching entity I use to control all of the alive enemies. All enemies are children under the manager and will obey its orders. The manager controls who is registered to the player's Kung-Fu circle, when they should be registered, what their movement target is, when to use certain coroutines, and combat. The manager allows one enemy at a time to have permission to attack in the main AI_Loop.
 
 The coroutines that the AI uses for its behavior can be better understood by splitting the behaviors into different states.
--PURSUING
--WAITING
--ATTACKING
--RETREATING
+
+-PURSUING.
+-WAITING.
+-ATTACKING.
+-RETREATING.
 
 Pursuing: The behavior the AI has when it is not registered in the Kung-Fu circle and must follow the player while staying outside of the radius of the circle.
 
@@ -63,6 +64,14 @@ Attacking: The AI is now preparing to attack the player and has started the proc
 Retreating: The AI has successfully damaged the player and will move backwards to get back into their assigned slot's position. This leads back into the WAIT behavior until the AI is given permission to attack again.
 
 https://user-images.githubusercontent.com/96618671/211688304-228b2dfd-8602-408f-8a94-7e22e14c7bb2.mp4
+
+Future expansions on this system can include:
+
+-Enemy on Enemy violence, enemies having grids and being able to form Kung-Fu circles around eachother.
+-Attacks with different weights, looping through all enemies sequencially and selecting available attacks based on attack weight instead
+of random selection with attack placeholder.
+-Turn-based combat where player attacks are done by selecting an enemy in the Kung-Fu circle.
+-Bigger scale AI simulation, adding hundreds of enemies swarming on targets (thinking GPP framework flocking except pirahnas that are polite to bite one at a time).
 
 Resources:
 GameAIPro - Chapter28: Beyond the Kung-Fu Circle
