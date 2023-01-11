@@ -3973,6 +3973,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5462300123349330404, guid: 64dce48905ffd9b4293e595fa6941544,
         type: 3}
+      propertyPath: distanceFromPlayer
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5462300123349330404, guid: 64dce48905ffd9b4293e595fa6941544,
+        type: 3}
       propertyPath: currentGridCapacity
       value: 7
       objectReference: {fileID: 0}

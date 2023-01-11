@@ -30,7 +30,7 @@ public abstract class KungFuCircle : MonoBehaviour
     private int maxGridCapacity = 7;
     [SerializeField]
     private PairFloat timer;
-    [SerializeField]
+
     public float distanceFromPlayer = 1;
 
     public int maximumSlots = 7;
@@ -84,7 +84,7 @@ public abstract class KungFuCircle : MonoBehaviour
             public abstract bool Register(EnemySubject enemy);
             public abstract bool Unregister(EnemySubject enemy);
             public abstract bool IsContains(EnemySubject enemy);
-            public abstract ECircles GetCircleType();
+            //public abstract ECircles GetCircleType();
 
         }
 

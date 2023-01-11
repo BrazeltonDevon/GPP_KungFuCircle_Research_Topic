@@ -125,10 +125,6 @@ public class EnemySubject : MonoBehaviour
     public bool IsRegisteredInFC = false;
     public Vector3 targetVector;
 
-    //Events
-    public UnityEvent<EnemySubject> OnDamage;
-    public UnityEvent<EnemySubject> OnStopMoving;
-    public UnityEvent<EnemySubject> OnRetreat;
 
     // Start is called before the first frame update
     void Start()
@@ -414,7 +410,6 @@ public class EnemySubject : MonoBehaviour
     {
         Debug.Log("PrepRetreat started");
         yield return new WaitForSeconds(1.4f);
-        OnRetreat.Invoke(this);
         isRetreating = true;
         moveDirection = -Vector3.forward;
 

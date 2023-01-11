@@ -61,10 +61,13 @@ public class ApproachCircle
         }
     }
 
-    public override ECircles GetCircleType()
-    {
-        return ECircles.Approach;
-    }
+    // DEPRECIATED*** was intending to have a melee and approach circle
+    // but ended up using distance calculations instead to determine
+    // when an enemy should attack
+   // public override ECircles GetCircleType()
+   // {
+   //     return ECircles.Approach;
+   // }
 
     public override bool IsContains(EnemySubject enemy)
     {
@@ -174,19 +177,7 @@ public class ApproachCircle
         return slot;
     }
 
-    //private List<Vector3> GetGlobalPositions()
-    //{
-    //    var center = transform.position;
-    //    List<Vector3> ret = new List<Vector3>();
-    //
-    //    for (int i = 0; i < localPositions.Length; i++)
-    //    {
-    //        ret.Add(localPositions[i] + center);
-    //    }
-    //
-    //    return ret;
-    //}
-
+    // gets all free slot positions
     private List<Vector3> GetGlobalFreePositions()
     {
         var center = transform.position;
@@ -204,6 +195,7 @@ public class ApproachCircle
         return ret;
     }
 
+    // gets all occupied slot positions
     private List<Vector3> GetGlobalNotFreePositions()
     {
         var center = transform.position;

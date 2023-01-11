@@ -5,6 +5,7 @@ using UnityEngine;
 using System;
 
 
+        // DEPRECIATED*** no longer using melee circle
         public enum ECircles
         {
             Melee,
@@ -57,8 +58,6 @@ using System;
 
             public bool Register (EnemySubject enemy, ECircles type)
             {
-                // if enemy is registered in a circle,
-                // move them to a different type
                 if (IsContains(enemy))
                 {
                     return false; 
@@ -79,30 +78,32 @@ using System;
                 return isRegistered;
             }
 
-            public bool Move(EnemySubject enemy, ECircles to)
-            {
-                int instance = enemy.gameObject.GetInstanceID ();
+            // intended for use in moving enemy from one circle to another **DEPRECIATED
 
-                var data = enemies[instance];
-
-                if (to.Equals (data.type))
-                    return true;
-
-                // unregister from current circle
-
-                _approachCircle.Unregister(enemy);
-
-                bool hasMoved;
-
-                hasMoved = _approachCircle.Register(enemy);
-
-                if (hasMoved)
-                {
-                    data.type = to;
-                }
-
-                return hasMoved;
-            }
+           //public bool Move(EnemySubject enemy, ECircles to)
+           //{
+           //    int instance = enemy.gameObject.GetInstanceID ();
+           //
+           //    var data = enemies[instance];
+           //
+           //    if (to.Equals (data.type))
+           //        return true;
+           //
+           //    // unregister from current circle
+           //
+           //    _approachCircle.Unregister(enemy);
+           //
+           //    bool hasMoved;
+           //
+           //    hasMoved = _approachCircle.Register(enemy);
+           //
+           //    if (hasMoved)
+           //    {
+           //        data.type = to;
+           //    }
+           //
+           //    return hasMoved;
+           //}
 
             public bool Unregister (EnemySubject enemy)
             {
@@ -148,32 +149,6 @@ using System;
                  return _approachCircle;
             }
 
-            public bool RegisterAction (EnemySubject enemy, float weight)
-            {
-                int instance = enemy.gameObject.GetInstanceID ();
-
-                if (!enemies.ContainsKey (instance))
-                    return false;
-
-                if (attacksWeight.key < weight)
-                    return false;
-
-                attacksWeight.key -= weight;
-
-                return true;
-            }
-
-            public bool UnregisterAction (EnemySubject enemy, float weight)
-            {
-                int instance = enemy.gameObject.GetInstanceID ();
-
-                if (!enemies.ContainsKey (instance))
-                    return false;
-
-                attacksWeight.key = Mathf.Clamp (attacksWeight.key + weight, 0f, attacksWeight.val);
-
-                return true;
-            }
 
         }
 
