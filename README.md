@@ -61,7 +61,7 @@ Attacking: The AI is now preparing to attack the player and has started the proc
 
 Retreating: The AI has successfully damaged the player and will move backwards to get back into their assigned slot's position. This leads back into the WAIT behavior until the AI is given permission to attack again.
 
-https://user-images.githubusercontent.com/96618671/211688002-0bd804bd-4b56-4e30-8c77-cb0687c1d182.mp4
+https://user-images.githubusercontent.com/96618671/211688304-228b2dfd-8602-408f-8a94-7e22e14c7bb2.mp4
 
 Resources:
 GameAIPro - Chapter28: Beyond the Kung-Fu Circle
